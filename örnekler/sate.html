@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>useState Benzeri Sayaç</title>
+  </head>
+  <body>
+    <button onclick="arttir()">Artır</button>
+
+    <h1>Sayı: <span id="sayi"></span></h1>
+
+    <button onclick="azalt()">Azalt</button>
+
+    <hr />
+
+    <input type="text" id="girilen" placeholder="Bir şey yaz..." />
+    <button onclick="göster()">Sonuç</button>
+
+    <p>Girdiğin Metin: <span id="metin"></span></p>
+
+    <script>
+      const sayiElement = document.getElementById("sayi");
+      const girilen = document.getElementById("girilen");
+      const metinElement = document.getElementById("metin");
+
+      function useState(initialValue) {
+        let _val = initialValue;
+
+        const get = () => _val;
+
+        const set = (newVal) => {
+          _val = newVal;
+          console.log("State updated:", _val);
+          render();
+        };
+
+        return [get, set];
+      }
+
+      const [getCount, setCount] = useState(0);
+
+      const [getText, setText] = useState("");
+
+      function render() {
+        sayiElement.innerText = getCount(); // Sayıyı güncelle
+        metinElement.innerText = getText(); // Metni güncelle
+      }
+
+      function arttir() {
+        setCount(getCount() + 1);
+      }
+
+      function azalt() {
+        setCount(getCount() - 1);
+      }
+
+      function göster() {
+        setText(girilen.value); // input'un değerini state'e yaz
+      }
+
+      render(); // İlk render
+    </script>
+  </body>
+</html>
