@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>En sevdiğin meyveyi seç</h1>
+    <ul>
+      <li>1-Elma</li>
+      <li>2-Çilek</li>
+      <li>3-Muz</li>
+    </ul>
+
+    <button>Seç</button>
+
+    <script>
+      const button = document.querySelector("button");
+
+      button.addEventListener("dblclick", () => {
+        const sellectAll = prompt("En sevdiğin meyve numarası nedir?");
+
+        if (sellectAll == 1) {
+          alert("Senin en sevdiğin meyve Elma");
+          button.textContent = "elma";
+        } else if (sellectAll == 2) {
+          alert("Senin en sevdiğin meyve Çilek");
+          button.textContent = "Çilek";
+        } else if (sellectAll == 3) {
+          alert("Senin en sevdiğin meyve Muz");
+          button.textContent = "Muz";
+        } else {
+          alert("Herhalde senin sevdiğin herhangi bir meyve yok");
+        }
+      });
+    </script>
+  </body>
+</html>

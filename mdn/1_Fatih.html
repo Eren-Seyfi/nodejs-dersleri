@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>En Sevdiğin Meyve Sec</h3>
+    <ul>
+      <li>1.ELMA</li>
+      <li>2.ÇİLEK</li>
+      <li>3.AMCIK</li>
+    </ul>
+
+    <button onclick="cevapGoster()" >EN SEVDİĞİN MEYVENİ SEC</button>
+
+    <script>
+
+      const button = document.querySelector("button");
+
+      function cevapGoster() {
+        let cevap = prompt("En sevdiğin mevye seç");
+
+        if (cevap == 1) {
+          alert("ELMA SEÇİMİ YAPTINIZ");
+          button.textContent = "elma";
+        } else if (cevap == 2) {
+          alert("ÇİLEK SEÇTİN AMK");
+          button.textContent = "çilek";
+        } else if (cevap == 3) {
+          alert("AMCIK SECTİN");
+          button.textContent = "amcık";
+        }
+      }
+    </script>
+  </body>
+</html>
